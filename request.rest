@@ -1,0 +1,34 @@
+# test ambil data user ke API /users
+GET http://192.168.10.30:9000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOjQsIm5hbWUiOiJSaWRvIE1hcnR1cGEiLCJ1c2VybmFtZSI6InJpZG8iLCJsZXZlbCI6IkFETUlOIiwiYmFnaWFuIjoiSVQiLCJpYXQiOjE2Njg1MDEzODUsImV4cCI6MTY2ODUwMTQxNX0.CgGyAQOGYlqmjFVt4QNZAs7pvS0tR-t9RUJ9RMkHXe0
+
+### login user
+POST http://192.168.10.30:9000/login
+Content-Type: application/json
+
+{
+  "username": "rido",
+  "password": "111111"
+}
+
+### refresh token setalah login
+GET http://192.168.10.30:9000/token
+
+
+### test register user baru
+POST http://192.168.10.30:9000/users
+Content-Type: application/json
+
+{
+  "name": "Rido Martupa",
+  "username": "rido",
+  "password": "111111",
+  "conf_password": "111111",
+  "level": "ADMIN",
+  "bagian": "IT"
+}
+
+### logout user
+DELETE http://192.168.10.30:9000/logout
+
+
